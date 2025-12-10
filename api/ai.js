@@ -1,14 +1,14 @@
 // ai.js
 import express from "express";
-import { GoogleGenAI, createUserContent, createPartFromUri } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 import cors from "cors";
 import { fetch, Headers, Request, Response } from 'undici';
 
-globalThis.fetch = fetch;
-globalThis.Headers = Headers;
-globalThis.Request = Request;
-globalThis.Response = Response;
+// globalThis.fetch = fetch;
+// globalThis.Headers = Headers;
+// globalThis.Request = Request;
+// globalThis.Response = Response;
 
 dotenv.config();
 
