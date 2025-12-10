@@ -53,10 +53,8 @@
     </div>
   </nav>
 
-  <!-- displaying top 10 players by scores -->
-  <section class="scoreChart_section">
+  <!-- <section class="scoreChart_section">
     <div class="chart-row">
-      <!-- Chart 1 -->
       <div class="viz-box">
         <h3>Top 10 Players by Total Score</h3>
         <label for="divisionSelect">Division:</label>
@@ -69,21 +67,19 @@
         <canvas id="scoreChart"></canvas>
       </div>
 
-      <!-- Chart 2 -->
+      
       <div class="viz-box longest-throw-box">
         <h3>Top 10 Longest Throws</h3>
         <canvas id="longestThrowChart"></canvas>
       </div>
 
-      <!-- Chart 3 -->
+      
       <div class="viz-box top-earner-box">
         <h3>Top 10 Highest-Earning Players</h3>
         <canvas id="topEarnerChart"></canvas>
       </div>
     </div>
-  </section>
-
-
+  </section> -->
 
   <section class="playerList_container">
     <table id="player_table">
