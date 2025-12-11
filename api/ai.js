@@ -2,13 +2,7 @@
 import express from "express";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
-import cors from "cors";
-// import { fetch, Headers, Request, Response } from 'undici';
 
-// globalThis.fetch = fetch;
-// globalThis.Headers = Headers;
-// globalThis.Request = Request;
-// globalThis.Response = Response;
 
 dotenv.config();
 
@@ -17,19 +11,12 @@ const app = express();
 app.use(express.json());
 console.log("Printing google key: ", process.env.GOOGLE_API_KEY);
 
-// app.use(
-//   cors({
-//     origin: ["http://localhost","https://discgolf.ryanmillsdev.com"]
-//   })
-// );
-
 
 let aIcontext = '';
 
 app.post("/ai-context", async (req, res) => {
   try {
     const { context } = req.body;
-    // console.log("Context" + context);
     aIcontext = "You are a disc golf analytics expert named 'Birdie'. If questions and requests do not relate to disc golf player performance and disc golf analytics, kindly apologize and decline to answer. Be concise and answer a question in 50 words or less, if you can." + context;
     console.log(aIcontext);
   } catch (e){
@@ -45,7 +32,7 @@ app.post("/ai", async (req, res) => {
     console.log(req.body);
     const { prompt } = req.body;
 
-    const modelName = "gemini-2.0-flash";
+    const modelName = "gemini-2.5-flash";
     
     const chat = ai.chats.create({
       model: modelName,
@@ -69,8 +56,6 @@ app.post("/ai", async (req, res) => {
 
     let mlJsonRes = {role:"model", parts:[{text: response1.candidates[0].content.parts[0].text}]};
     histories.push(mlJsonRes);
-
-    // console.log(histories);
 
     return res.json({ summary: response1.text.trim() });
     
