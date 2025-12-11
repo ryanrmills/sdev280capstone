@@ -9,7 +9,6 @@ dotenv.config();
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
 const app = express();
 app.use(express.json());
-console.log("Printing google key: ", process.env.GOOGLE_API_KEY);
 
 
 let aIcontext = '';
@@ -18,9 +17,7 @@ app.post("/ai-context", async (req, res) => {
   try {
     const { context } = req.body;
     aIcontext = "You are a disc golf analytics expert named 'Birdie'. If questions and requests do not relate to disc golf player performance and disc golf analytics, kindly apologize and decline to answer. Be concise and answer a question in 50 words or less, if you can." + context;
-    console.log(aIcontext);
   } catch (e){
-    console.error(e);
     return res.status(500).json({ error: e.message });
   }
 })
@@ -29,7 +26,6 @@ app.post("/ai-context", async (req, res) => {
 app.post("/ai", async (req, res) => {
   try {
     const histories = [];
-    console.log(req.body);
     const { prompt } = req.body;
 
     const modelName = "gemini-2.5-flash";
@@ -60,7 +56,6 @@ app.post("/ai", async (req, res) => {
     return res.json({ summary: response1.text.trim() });
     
   } catch (e) {
-    console.error(e);
     return res.status(500).json({ error: e.message });
   }
 });
