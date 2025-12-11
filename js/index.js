@@ -2709,6 +2709,7 @@ document.getElementById('chat_user_message').addEventListener('keypress', async(
     
     
     let aiResponse = await loadAISummary(userMessage);
+    console.log({aiREsult: aiResponse});
     let resBiggerContainer = document.createElement('div');
     resBiggerContainer.className = 'ai_response_biggerBox';
     let resContainer = document.createElement('div');
