@@ -15,6 +15,7 @@ dotenv.config();
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
 const app = express();
 app.use(express.json());
+console.log("Printing google key: ", process.env.GOOGLE_API_KEY);
 
 // app.use(
 //   cors({
