@@ -2653,7 +2653,7 @@ async function loadAIContext(){
   })
 }
 
-loadAIContext();
+await loadAIContext();
 
 document.getElementById('send_chat_message').addEventListener('click', async() => {
   let userMessageInput = document.getElementById('chat_user_message');

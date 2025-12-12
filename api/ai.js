@@ -22,7 +22,8 @@ app.post("/ai-context", async (req, res) => {
   }
 })
 
-
+//My next steps would be to limitt the size of the histories list 
+//so that the context is not large.
 app.post("/ai", async (req, res) => {
   try {
     const histories = [];
